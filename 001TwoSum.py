@@ -7,12 +7,17 @@ class Solution(object):
         dictResult = {}
 
         for i in range(len(nums)):
-            pass
+            if nums[i] in dictResult:
+                return [dictResult[nums[i]], 1]
+            else:
+                dictResult[target - nums[i]] = i
 
 
 
 if __name__ == '__main__':
-    nums = [2, 7, 11, 15]
+    nums = [22, 2, 7, 15]
     target = 9
 
-    Solution().twoSum(nums, target)
+    rest = Solution().twoSum(nums, target)
+
+    print(rest)
